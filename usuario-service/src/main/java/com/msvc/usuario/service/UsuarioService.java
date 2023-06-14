@@ -1,6 +1,6 @@
 package com.msvc.usuario.service;
 
-import com.msvc.usuario.entity.Usuario;
+import com.msvc.usuario.entities.Usuario;
 
 import java.util.List;
 

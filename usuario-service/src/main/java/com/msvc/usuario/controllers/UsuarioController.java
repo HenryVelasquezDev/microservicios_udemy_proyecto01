@@ -1,6 +1,6 @@
 package com.msvc.usuario.controllers;
 
-import com.msvc.usuario.entity.Usuario;
+import com.msvc.usuario.entities.Usuario;
 import com.msvc.usuario.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
