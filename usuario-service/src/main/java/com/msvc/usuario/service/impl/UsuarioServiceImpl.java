@@ -66,10 +66,10 @@ public class UsuarioServiceImpl implements UsuarioService {
     }
 
     private Calificacion[] listarCalificacionesUsuario( Usuario usuario ){
-        return restTemplate.getForObject("http://localhost:8083/calificaciones/usuarios/"+usuario.getUsuarioId(), Calificacion[].class);
+        return restTemplate.getForObject("http://CALIFICACION-SERVICE/calificaciones/usuarios/"+usuario.getUsuarioId(), Calificacion[].class);
     }
 
     private ResponseEntity<Hotel> obtenerHotelCalificacion( Calificacion calificacion){
-        return restTemplate.getForEntity("http://localhost:8082/hoteles/"+calificacion.getHotelId(), Hotel.class);
+        return restTemplate.getForEntity("http://HOTEL-SERVICE/hoteles/"+calificacion.getHotelId(), Hotel.class);
     }
 }
