@@ -1,5 +1,6 @@
 server:
   port: 8081
+  #port: ${PORT:${SERVER_PORT:0}} # se utiliza esta linea en caso de querer puerto aleatorio y se comenta la del puerto fijo
 
 spring:
   datasource:
@@ -14,3 +15,16 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL8Dialect
+
+  application:
+    name: USUARIO-SERVICE
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    #instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}} # se utiliza esta linea en caso de querer puerto aleatorio y se comenta la del prefer-ip-address
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
