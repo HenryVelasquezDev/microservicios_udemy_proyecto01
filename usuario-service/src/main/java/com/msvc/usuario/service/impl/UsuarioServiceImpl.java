@@ -4,6 +4,7 @@ import com.msvc.usuario.entities.Calificacion;
 import com.msvc.usuario.entities.Hotel;
 import com.msvc.usuario.entities.Usuario;
 import com.msvc.usuario.exceptions.ResourceNotFoundException;
+import com.msvc.usuario.external.services.HotelService;
 import com.msvc.usuario.repository.UsuarioRepository;
 import com.msvc.usuario.service.UsuarioService;
 import org.slf4j.Logger;
@@ -27,6 +28,9 @@ public class UsuarioServiceImpl implements UsuarioService {
 
     @Autowired
     private RestTemplate restTemplate;
+
+    @Autowired
+    private HotelService hotelService;
 
     private Logger logger = LoggerFactory.getLogger(UsuarioService.class);
 
@@ -52,9 +56,11 @@ public class UsuarioServiceImpl implements UsuarioService {
         List<Calificacion> calificaciones = Arrays.stream(calificacionesDelUsuario).collect(Collectors.toList());
 
         List<Calificacion> listaCalificaciones = calificaciones.stream().map( calificacion -> {
-            ResponseEntity<Hotel> forEntity = this.obtenerHotelCalificacion(calificacion);
-            Hotel hotel = forEntity.getBody();
-            logger.info("Respuesta con codigo de estado: {}", forEntity.getStatusCode());
+//            ResponseEntity<Hotel> forEntity = this.obtenerHotelCalificacion(calificacion);
+//            Hotel hotel = forEntity.getBody();
+//            logger.info("Respuesta con codigo de estado: {}", forEntity.getStatusCode());
+
+            Hotel hotel  = hotelService.getHotel(calificacion.getHotelId());
 
             calificacion.setHotel(hotel);
             return calificacion;
