@@ -1,0 +1,305 @@
+{
+	"info": {
+		"_postman_id": "ceb13966-8a9e-43f9-b6ef-ad85e55bb7fa",
+		"name": "Curso-Mucroservicios-Udemy-Proyect01",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14790668"
+	},
+	"item": [
+		{
+			"name": "UsuarioService",
+			"item": [
+				{
+					"name": "Listar Usuarios",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/usuarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Usuarios ApiGateway",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8084/usuarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Insertar Usuario",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Pepe\",\r\n    \"email\": \"p2@gmail.com\",\r\n    \"informacion\": \"Usuario Pepe\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/usuarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Usuario por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/usuarios/5f7d6eb9-3ad3-4c86-be38-f29eb12dfdd1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"usuarios",
+								"5f7d6eb9-3ad3-4c86-be38-f29eb12dfdd1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "HotelService",
+			"item": [
+				{
+					"name": "Listar Hoteles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/hoteles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"hoteles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Hoteles ApiGateway",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8084/hoteles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"hoteles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Insertar Hotel",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Hotel02\",\r\n    \"ubicacion\": \"ubicacion02\",\r\n    \"informacion\": \"informacion02\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/hoteles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"hoteles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Hotel por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/hoteles/e23c0494-7fbe-4cd4-9fbf-c3d8d4c0fe8b",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"hoteles",
+								"e23c0494-7fbe-4cd4-9fbf-c3d8d4c0fe8b"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CalificacionService",
+			"item": [
+				{
+					"name": "Listar Calificacion",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8083/calificaciones",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"calificaciones"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Calificacion ApiGateway",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8084/calificaciones",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"calificaciones"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Insertar Calificacion",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{    \r\n    \"usuarioId\":\"93147914-4726-4854-873a-7891dcfeea17\",\r\n    \"hotelId\":\"ec81b3ee-e4e8-41c7-8013-4f9dcb8e03ff\",\r\n    \"calificacion\":10,\r\n    \"observaciones\":\"buen hotel para fin de semana\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/calificaciones",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"calificaciones"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Calificaciones por UsuarioID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8083/calificaciones/usuarios/93147914-4726-4854-873a-7891dcfeea17",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"calificaciones",
+								"usuarios",
+								"93147914-4726-4854-873a-7891dcfeea17"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Calificaciones por HotelID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8083/calificaciones/hoteles/ec81b3ee-e4e8-41c7-8013-4f9dcb8e03ff",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"calificaciones",
+								"hoteles",
+								"ec81b3ee-e4e8-41c7-8013-4f9dcb8e03ff"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
