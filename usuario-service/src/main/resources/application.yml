@@ -19,12 +19,7 @@ spring:
   application:
     name: USUARIO-SERVICE
 
-eureka:
-  instance:
-    prefer-ip-address: true
-    #instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}} # se utiliza esta linea en caso de querer puerto aleatorio y se comenta la del prefer-ip-address
-  client:
-    fetch-registry: true
-    register-with-eureka: true
-    service-url:
-      defaultZone: http://localhost:8761/eureka
+  config:
+    import: optional:configserver:http://CONGIF-SERVER #Se utiliza el optional: cuando se quiere utilizar el archivo por default del config server y no definir un perfil especifico
+  #profiles: #se establece esta etiqueta para elegir el perfil de archivo de configuracion del config server
+    #active: prod #se establece esta etiqueta para elegir el perfil de archivo de configuracion del config server
