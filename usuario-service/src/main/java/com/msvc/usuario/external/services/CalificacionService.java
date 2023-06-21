@@ -12,7 +12,7 @@ public interface CalificacionService {
     public ResponseEntity<Calificacion> guardarCalificacion(Calificacion calificacion);
 
     @PostMapping("/calificaciones/{calificacionId}")
-    public ResponseEntity<Calificacion> actualizarCalificacion(@PathVariable String calificacionId, Calificacion calificacion );
+    public ResponseEntity<Calificacion> actualizarCalificacion(@PathVariable String calificacionId, @RequestBody Calificacion calificacion );
 
     @DeleteMapping("/calificaciones/{calificacionId}")
     public void eliminarCalificacion(@PathVariable String calificacionId);

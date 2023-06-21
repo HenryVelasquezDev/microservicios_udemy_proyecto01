@@ -23,3 +23,38 @@ spring:
     import: optional:configserver:http://CONGIF-SERVER #Se utiliza el optional: cuando se quiere utilizar el archivo por default del config server y no definir un perfil especifico
   #profiles: #se establece esta etiqueta para elegir el perfil de archivo de configuracion del config server
     #active: prod #se establece esta etiqueta para elegir el perfil de archivo de configuracion del config server
+
+management:
+  healt:
+    circuitbreakers:
+      enabled: true
+    endpoints:
+      web:
+        exposure:
+          include: health
+
+    endpoint:
+      health:
+        show-details: always
+
+
+resilience4j:
+  circuitbreaker:
+    instances:
+      ratingHotelBreaker:
+        registerHealthIndicator: true
+        eventConsumerBufferSize: 10
+        failureRateThreshold: 50
+        minimumNumberOfCalls: 5
+        automaticTransitionFromOpenToHalfOpenEnabled: true
+        waitDurationInOpenState: 6s
+        permittedNumberOfCallsInHalfOpenState: 3
+        slidingWindowSize: 10
+        slidingWindowType: COUNT_BASED
+
+  retry:
+    instances:
+      ratingHotelRetry:
+        maxAttempts: 3
+        waitDuration: 10s
+
