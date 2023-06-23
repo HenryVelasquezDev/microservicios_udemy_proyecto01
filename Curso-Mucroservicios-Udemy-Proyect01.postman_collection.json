@@ -94,6 +94,35 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Listar Usuarios con token ",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcnVlYmEyIiwiaWQiOjIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNjg3NTYxNTI0LCJleHAiOjE2ODc1NjUxMjR9.cdbnZI3Wi-gR8lh63XaT0hhC-i6ga6qx-OoHBEnaUL0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8084/usuarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"usuarios"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -294,6 +323,104 @@
 								"calificaciones",
 								"hoteles",
 								"ec81b3ee-e4e8-41c7-8013-4f9dcb8e03ff"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "AuthService",
+			"item": [
+				{
+					"name": "Crear Usuario",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\" : \"prueba1\",\r\n    \"password\" : \"root\",\r\n    \"role\" : \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8084/auth/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"auth",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login usuario",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\" : \"prueba1\",\r\n    \"password\" : \"root\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8084/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Validar Token Usuario",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"uri\": \"http://localhost:8081/usuarios\",\r\n    \"method\": \"POST\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8084/auth/validate?token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcnVlYmEyIiwiaWQiOjIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNjg3NTYxNTI0LCJleHAiOjE2ODc1NjUxMjR9.cdbnZI3Wi-gR8lh63XaT0hhC-i6ga6qx-OoHBEnaUL0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"auth",
+								"validate"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcnVlYmEyIiwiaWQiOjIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNjg3NTYxNTI0LCJleHAiOjE2ODc1NjUxMjR9.cdbnZI3Wi-gR8lh63XaT0hhC-i6ga6qx-OoHBEnaUL0"
+								}
 							]
 						}
 					},
